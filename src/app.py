@@ -68,8 +68,8 @@ def signup_for_activity(activity_name: str, email: str):
     # Normalize email for duplicate checks
     email_norm = email.strip().lower()
 
-    # Check for duplicate signup (case-insensitive)
-    if any(p.strip().lower() == email_norm for p in participants):
+    # Validate student is not already signed up
+    if email_norm in (p.lower() for p in participants):
         raise HTTPException(status_code=409, detail="Student already signed up")
 
     # Check capacity
