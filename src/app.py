@@ -38,6 +38,42 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    },
+    "Soccer Team": {
+        "description": "Competitive soccer training and weekend matches",
+        "schedule": "Tuesdays and Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 22,
+        "participants": ["alex@mergington.edu", "maria@mergington.edu"]
+    },
+    "Basketball Club": {
+        "description": "Scrimmages, drills, and teamwork for basketball lovers",
+        "schedule": "Wednesdays and Fridays, 5:00 PM - 6:30 PM",
+        "max_participants": 16,
+        "participants": ["jordan@mergington.edu", "nina@mergington.edu"]
+    },
+    "Art Studio": {
+        "description": "Express yourself through painting, drawing, and mixed media",
+        "schedule": "Mondays and Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 15,
+        "participants": ["zoe@mergington.edu", "liam@mergington.edu"]
+    },
+    "Drama Workshop": {
+        "description": "Acting exercises, scene work, and performance practice",
+        "schedule": "Tuesdays and Fridays, 4:30 PM - 6:00 PM",
+        "max_participants": 18,
+        "participants": ["maya@mergington.edu", "ethan@mergington.edu"]
+    },
+    "Science Club": {
+        "description": "Hands-on experiments and science fair project development",
+        "schedule": "Wednesdays, 4:00 PM - 5:30 PM",
+        "max_participants": 20,
+        "participants": ["noah@mergington.edu", "sophia@mergington.edu"]
+    },
+    "Math Olympiad": {
+        "description": "Problem-solving practice for math competitions and challenges",
+        "schedule": "Thursdays, 4:00 PM - 5:30 PM",
+        "max_participants": 12,
+        "participants": ["anna@mergington.edu", "jared@mergington.edu"]
     }
 }
 
