@@ -44,3 +44,16 @@ def test_activity_full_returns_409():
     r = client.post("/activities/Test%20Activity/signup", params={"email": "late@school.edu"})
     assert r.status_code == 409
     assert r.json().get("detail") == "Activity is full"
+
+
+def test_remove_participant():
+    r = client.delete("/activities/Test%20Activity/participants", params={"email": "existing@school.edu"})
+    assert r.status_code == 200
+    assert r.json().get("message") == "Removed existing@school.edu from Test Activity"
+    assert "existing@school.edu" not in activities["Test Activity"]["participants"]
+
+
+def test_remove_missing_participant_returns_404():
+    r = client.delete("/activities/Test%20Activity/participants", params={"email": "ghost@school.edu"})
+    assert r.status_code == 404
+    assert r.json().get("detail") == "Participant not found"
