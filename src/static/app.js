@@ -44,9 +44,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle form submission
   signupForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-
     const email = document.getElementById("email").value;
     const activity = document.getElementById("activity").value;
+    const submitButton = signupForm.querySelector('button[type="submit"]');
+
+    // Prevent double submission
+    if (submitButton.disabled) return;
+
+    submitButton.disabled = true;
+    submitButton.setAttribute('aria-busy', 'true');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Signing...';
 
     try {
       const response = await fetch(
@@ -78,6 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
       messageDiv.className = "error";
       messageDiv.classList.remove("hidden");
       console.error("Error signing up:", error);
+    } finally {
+      // Re-enable submit button
+      submitButton.disabled = false;
+      submitButton.removeAttribute('aria-busy');
+      submitButton.textContent = originalText;
     }
   });
 
